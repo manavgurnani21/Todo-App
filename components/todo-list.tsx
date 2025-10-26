@@ -10,6 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Card } from "@/components/ui/card"
 import { Trash2, Plus } from "lucide-react"
 import type { Todo } from "@/app/api/todos/route"
+import { useToast } from "@/hooks/use-toast"
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
@@ -17,6 +18,7 @@ export function TodoList() {
   const { data: todos, mutate } = useSWR<Todo[]>("/api/todos", fetcher)
   const [newTodoText, setNewTodoText] = useState("")
   const [isAdding, setIsAdding] = useState(false)
+  const { toast } = useToast()
 
   const addTodo = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -67,6 +69,13 @@ export function TodoList() {
     }
   }
 
+  const handleTaskClick = (todo: Todo) => {
+    toast({
+      title: "Task Details",
+      description: `"${todo.text}" - ${todo.completed ? "Completed" : "Active"}`,
+    })
+  }
+
   const activeTodos = todos?.filter((t) => !t.completed) || []
   const completedTodos = todos?.filter((t) => t.completed) || []
 
@@ -95,7 +104,12 @@ export function TodoList() {
               <Card key={todo.id} className="p-4">
                 <div className="flex items-center gap-3">
                   <Checkbox checked={todo.completed} onCheckedChange={() => toggleTodo(todo.id, todo.completed)} />
-                  <span className="flex-1 text-foreground">{todo.text}</span>
+                  <span
+                    className="flex-1 text-foreground cursor-pointer hover:text-primary transition-colors"
+                    onClick={() => handleTaskClick(todo)}
+                  >
+                    {todo.text}
+                  </span>
                   <Button
                     variant="ghost"
                     size="icon"
@@ -117,7 +131,12 @@ export function TodoList() {
               <Card key={todo.id} className="p-4 opacity-60">
                 <div className="flex items-center gap-3">
                   <Checkbox checked={todo.completed} onCheckedChange={() => toggleTodo(todo.id, todo.completed)} />
-                  <span className="flex-1 line-through text-muted-foreground">{todo.text}</span>
+                  <span
+                    className="flex-1 line-through text-muted-foreground cursor-pointer hover:text-primary transition-colors"
+                    onClick={() => handleTaskClick(todo)}
+                  >
+                    {todo.text}
+                  </span>
                   <Button
                     variant="ghost"
                     size="icon"
