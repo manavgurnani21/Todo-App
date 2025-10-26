@@ -35,7 +35,7 @@ export function TodoList() {
       mutate([...(todos || []), newTodo], false)
       setNewTodoText("")
     } catch (error) {
-      console.error("[v0] Error adding todo:", error)
+      console.error("[v0] Error adding todo task:", error)
     } finally {
       setIsAdding(false)
     }
@@ -53,7 +53,7 @@ export function TodoList() {
         false,
       )
     } catch (error) {
-      console.error("[v0] Error toggling todo:", error)
+      console.error("[v0] Error toggling todo task:", error)
     }
   }
 
@@ -65,7 +65,7 @@ export function TodoList() {
         false,
       )
     } catch (error) {
-      console.error("[v0] Error deleting todo:", error)
+      console.error("[v0] Error deleting todo task:", error)
     }
   }
 

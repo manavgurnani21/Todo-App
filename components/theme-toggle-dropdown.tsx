@@ -33,7 +33,7 @@ export function ThemeToggleDropdown() {
           <Moon className="mr-2 h-4 w-4" />
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
+        <DropdownMenuItem onClick={() => setTheme("auto")}>
           <Monitor className="mr-2 h-4 w-4" />
           System
         </DropdownMenuItem>
