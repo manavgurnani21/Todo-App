@@ -17,7 +17,6 @@ export default function Home() {
         <p className="text-center text-muted-foreground mb-8 text-balance">
           Stay organized and productive with your personal task list
         </p>
-        <ThemeDemo />
         <TodoList />
       </div>
     </main>
