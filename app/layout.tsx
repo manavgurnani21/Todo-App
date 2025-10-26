@@ -8,8 +8,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Todo List Supreme - Branch B',
-  description: 'Ultimate productivity todo application',
+  title: 'Task Manager Pro - Branch A',
+  description: 'Advanced task management application',
   generator: 'v0.app',
 }
 
