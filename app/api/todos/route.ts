@@ -17,7 +17,7 @@ const todos: Todo[] = [
   },
   {
     id: "2",
-    text: "Learn about git",
+    text: "Learn about git commands",
     completed: true,
     createdAt: new Date().toISOString(),
   },
