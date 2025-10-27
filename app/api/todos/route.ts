@@ -23,7 +23,7 @@ const todos: Todo[] = [
   },
   {
     id: "3",
-    text: "Create beautiful UI",
+    text: "Create super ugly UI",
     completed: false,
     createdAt: new Date().toISOString(),
   },
