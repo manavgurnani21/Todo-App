@@ -11,19 +11,19 @@ export type Todo = {
 const todos: Todo[] = [
   {
     id: "1",
-    text: "Build a to-do list app",
+    text: "Build a great to-do list app",
     completed: true,
     createdAt: new Date().toISOString(),
   },
   {
     id: "2",
-    text: "Add API routes",
+    text: "Add dynamic API routes",
     completed: true,
     createdAt: new Date().toISOString(),
   },
   {
     id: "3",
-    text: "Create beautiful UI",
+    text: "Create wonderful UI",
     completed: false,
     createdAt: new Date().toISOString(),
   },
