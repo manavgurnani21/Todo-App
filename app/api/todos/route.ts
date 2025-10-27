@@ -11,13 +11,13 @@ export type Todo = {
 const todos: Todo[] = [
   {
     id: "1",
-    text: "Build a to-do list app",
+    text: "Do some homework",
     completed: true,
     createdAt: new Date().toISOString(),
   },
   {
     id: "2",
-    text: "Add API routes",
+    text: "Learn about git",
     completed: true,
     createdAt: new Date().toISOString(),
   },
