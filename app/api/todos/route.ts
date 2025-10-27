@@ -1,5 +1,33 @@
 import { NextResponse } from "next/server"
-import { todos, type Todo } from "@/lib/todos-store"
+
+export type Todo = {
+  id: string
+  text: string
+  completed: boolean
+  createdAt: string
+}
+
+// In-memory storage (replace with database in production)
+const todos: Todo[] = [
+  {
+    id: "1",
+    text: "Build a great to-do list app",
+    completed: true,
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "2",
+    text: "Add dynamic API routes",
+    completed: true,
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "3",
+    text: "Create wonderful UI",
+    completed: false,
+    createdAt: new Date().toISOString(),
+  },
+]
 
 // GET all todos
 export async function GET() {
