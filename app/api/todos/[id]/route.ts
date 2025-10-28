@@ -1,9 +1,5 @@
 import { NextResponse } from "next/server"
-import type { Todo } from "../route"
-
-// In-memory storage (same reference as route.ts)
-// In production, use a shared database
-const todos: Todo[] = []
+import { todos, type Todo } from "@/lib/todos-store"
 
 // PATCH update todo
 export async function PATCH(request: Request, { params }: { params: Promise<{ id: string }> }) {
