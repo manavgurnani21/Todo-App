@@ -97,7 +97,7 @@ export function TodoList() {
       </form>
 
       <div className="space-y-4">
-        {activeTodos.length > 0 && (
+        {activeTodos.length > 1 && (
           <div className="space-y-2">
             <h2 className="text-sm font-medium text-muted-foreground">Active Tasks ({activeTodos.length})</h2>
             {activeTodos.map((todo) => (
